@@ -10,8 +10,6 @@ GitHub shows the file tree before the README, forcing you to scroll past the cod
 
 This extension automatically repositions the README to appear first, putting documentation where it belongs—at the top.
 
-![Before and After](https://github.com/user-attachments/assets/placeholder.png)
-
 ## Installation
 
 ### Chrome Web Store
