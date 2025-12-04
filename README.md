@@ -1,41 +1,102 @@
-Privacy Policy for Readme First
+# Readme First
 
-Last updated: December 3, 2025
+A Chrome extension that moves GitHub README content above the file listing.
 
-Overview
+## The Problem
 
-Readme First is a browser extension that repositions README content above the file listing on GitHub repository pages. This privacy policy explains how
-the extension handles user data.
+GitHub shows the file tree before the README, forcing you to scroll past the code listing to read documentation.
 
-Data Collection
+## The Solution
 
-Readme First does not collect, store, transmit, or share any user data. The extension:
+This extension automatically repositions the README to appear first, putting documentation where it belongs—at the top.
 
-- Does not collect personal information
-- Does not collect browsing history
-- Does not collect usage statistics
-- Does not use analytics or tracking
-- Does not use cookies
-- Does not communicate with any external servers
+![Before and After](https://github.com/user-attachments/assets/placeholder.png)
 
-How the Extension Works
+## Installation
 
-The extension runs entirely within your browser. It executes a content script on GitHub pages that modifies the page layout by moving existing DOM
-elements. All processing happens locally on your device. No data leaves your browser.
+### Chrome Web Store
 
-Permissions
+Install from the [Chrome Web Store](https://chrome.google.com/webstore/detail/readme-first/YOUR_EXTENSION_ID)
 
-The extension requires access to github.com solely to modify the page layout. This permission is used exclusively to reposition the README section and
-for no other purpose.
+### Manual Installation
 
-Third Parties
+1. Clone this repository
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/readme-first.git
+   ```
 
-Readme First does not share any data with third parties because no data is collected.
+2. Open Chrome and navigate to `chrome://extensions`
 
-Changes to This Policy
+3. Enable **Developer mode** (toggle in top right)
 
-Any updates to this privacy policy will be reflected with a new "Last updated" date.
+4. Click **Load unpacked** and select the cloned folder
 
-Contact
+## Usage
 
-If you have questions about this privacy policy, please open an issue on the project's GitHub repository.
+Once installed, visit any GitHub repository. The README will automatically appear above the file listing. No configuration needed.
+
+## How It Works
+
+The extension injects a content script on GitHub pages that:
+
+1. Finds the README content and file listing elements
+2. Locates their common ancestor in the DOM
+3. Repositions the README element before the file listing
+
+The script handles GitHub's client-side navigation, so it works seamlessly as you browse between repositories.
+
+## Permissions
+
+| Permission | Reason |
+|------------|--------|
+| `github.com` | Required to modify page layout on GitHub repositories |
+
+No other permissions are requested. No data is collected or transmitted.
+
+## Privacy
+
+This extension:
+
+- Runs entirely in your browser
+- Collects no data
+- Has no analytics
+- Makes no network requests
+
+See the full [Privacy Policy](PRIVACY.md).
+
+## Development
+
+```bash
+# Clone the repo
+git clone https://github.com/YOUR_USERNAME/readme-first.git
+
+# Load in Chrome
+# 1. Go to chrome://extensions
+# 2. Enable Developer mode
+# 3. Click "Load unpacked"
+# 4. Select the project folder
+```
+
+To test changes, click the refresh icon on the extension card in `chrome://extensions`.
+
+## Project Structure
+
+```
+readme-first/
+├── manifest.json    # Extension configuration
+├── content.js       # Content script (the magic happens here)
+├── icons/           # Extension icons
+│   ├── icon16.png
+│   ├── icon48.png
+│   └── icon128.png
+├── README.md
+└── PRIVACY.md
+```
+
+## Contributing
+
+Contributions are welcome! Feel free to open an issue or submit a pull request.
+
+## License
+
+MIT
